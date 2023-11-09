@@ -2,21 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-		<!--声明文档兼容模式-->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-		<!--设置视口的宽度,页面初始缩放值-->
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		<title>Login</title>
-		<!--引入Bootstrap核心CSS文件-->
-		<link rel="stylesheet" href="../css/bootstrap.min.css"/>
-		<!-- 引入自定义css文件 -->
-		<link rel="stylesheet" href="../css/login.css" type="text/css"/>
-		<!--引入jQuery核心JS文件-->
-		<script src="../js/jquery-1.11.3.min.js"></script>
-		<!--引入BootStrap核心JS文件-->
-		<script src="../js/bootstrap.min.js"></script>
-		<!-- 引入自定义js文件 -->
-		<script src="../js/login.js" type="text/javascript"></script>
+<meta charset="utf-8"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     
