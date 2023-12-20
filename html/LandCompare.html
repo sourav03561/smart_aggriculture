@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>LandCompare</title>
+		<link rel="stylesheet" href="../css/style.css" type="text/css"/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+		
+	</head>
+	<body>
+		<div class="OutsideBox">
+			<header class="custom-header">
+			  <h1>Land Compare</h1>
+			</header>
+			<section>
+				<div class="custom-select">
+					<select name="crops" id="crops">
+						<option value="potato">Potato</option>
+						<option value="tomato">Tomato</option>
+						<option value="cron">Cron</option>
+					</select>
+					
+				</div>
+				<div class="select-land">
+				  <div class="land-selector">
+				    <select class="dropdown">
+				      <option value="option1">Land 1</option>
+				      <option value="option2">Land 2</option>
+				    </select>
+				    <div class="image-container">
+				      <img class="selected-image" src="../img/land_1.png" alt="Selected Image">
+				    </div>
+				    <div class="value-display">
+				      <p class="selected-value">Selected Value: 0</p>
+				    </div>
+				  </div>
+				  <div class="land-selector">
+				    <select class="dropdown">
+				      <option value="option1">Land 1</option>
+				      <option value="option2" selected>Land 2</option>
+				    </select>
+				    <div class="image-container">
+				      <img class="selected-image" src="../img/land_2.png" alt="Selected Image">
+				    </div>
+				    <div class="value-display">
+				      <p class="selected-value">Selected Value: 0</p>
+				    </div>
+				  </div>
+				</div>
+			</section>
+			<footer class="dashboard-footer">
+			  <p>Land 1 is better than Land 2 in potato farming.</p>
+			</footer>
+		</div>
+		<script>
+			document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+			  const selectedImage = dropdown.parentElement.querySelector('.selected-image');
+			  const selectedValue = dropdown.parentElement.querySelector('.selected-value');
+			  const valueDisplay = dropdown.parentElement.querySelector('.value-display');
+			  
+			  dropdown.addEventListener('change', function() {
+			    const selectedOption = dropdown.value;
+			    if (selectedOption === 'option1') {
+			      selectedImage.src = '../img/land_1.png';
+			      selectedValue.textContent = 'Selected Value: 111';
+			    } else if (selectedOption === 'option2') {
+			      selectedImage.src = '../img/land_2.png';
+			      selectedValue.textContent = 'Selected Value: 222';
+			    }
+			    valueDisplay.style.display = 'block';
+			  });
+			});
+
+
+		</script>
+	</body>
+</html>
