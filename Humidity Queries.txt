@@ -1,0 +1,35 @@
+-- Query for average humidity sensor data for each land within a specified time period
+SELECT 
+    sd.land_id, 
+    AVG(sd.value) AS avg_humidity
+FROM 
+    Sensor_Data sd
+WHERE 
+    sd.sensor_typeid = 'Humidity' AND
+    sd.date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sd.land_id;
+
+-- Query for maximum humidity sensor data for each land within a specified time period
+SELECT 
+    sd.land_id, 
+    MAX(sd.value) AS max_humidity
+FROM 
+    Sensor_Data sd
+WHERE 
+    sd.sensor_typeid = 'Humidity' AND
+    sd.date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sd.land_id;
+
+-- Query for minimum humidity sensor data for each land within a specified time period
+SELECT 
+    sd.land_id, 
+    MIN(sd.value) AS min_humidity
+FROM 
+    Sensor_Data sd
+WHERE 
+    sd.sensor_typeid = 'Humidity' AND
+    sd.date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sd.land_id;

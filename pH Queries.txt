@@ -1,0 +1,35 @@
+-- Query for average pH sensor data for each land within a specified time period
+SELECT 
+    sd.land_id, 
+    AVG(sd.value) AS avg_ph
+FROM 
+    Sensor_Data sd
+WHERE 
+    sd.sensor_typeid = 'PH' AND
+    sd.date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sd.land_id;
+
+-- Query for maximum pH sensor data for each land within a specified time period
+SELECT 
+    sd.land_id, 
+    MAX(sd.value) AS max_ph
+FROM 
+    Sensor_Data sd
+WHERE 
+    sd.sensor_typeid = 'PH' AND
+    sd.date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sd.land_id;
+
+-- Query for minimum pH sensor data for each land within a specified time period
+SELECT 
+    sd.land_id, 
+    MIN(sd.value) AS min_ph
+FROM 
+    Sensor_Data sd
+WHERE 
+    sd.sensor_typeid = 'PH' AND
+    sd.date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sd.land_id;
