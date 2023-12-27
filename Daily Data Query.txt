@@ -1,0 +1,12 @@
+-- Query for all sensor data for each land, aggregated daily
+SELECT 
+    land_id, 
+    DATE(date) AS date, 
+    sensor_typeid, 
+    AVG(value) AS average_value,
+    MAX(value) AS max_value,
+    MIN(value) AS min_value
+FROM 
+    Sensor_Data
+GROUP BY 
+    land_id, DATE(date), sensor_typeid;

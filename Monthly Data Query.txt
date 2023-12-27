@@ -1,0 +1,13 @@
+-- Query for all sensor data for each land, aggregated monthly
+SELECT 
+    land_id, 
+    YEAR(date) AS year, 
+    MONTH(date) AS month, 
+    sensor_typeid, 
+    AVG(value) AS average_value,
+    MAX(value) AS max_value,
+    MIN(value) AS min_value
+FROM 
+    Sensor_Data
+GROUP BY 
+    land_id, YEAR(date), MONTH(date), sensor_typeid;
