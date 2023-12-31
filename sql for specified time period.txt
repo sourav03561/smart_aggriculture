@@ -1,0 +1,76 @@
+-- Query for daily sensor data for each sensor within a specified time period
+SELECT 
+    sensor_id, 
+    DATE(date) AS date, 
+    AVG(value) AS average_value,
+    MAX(value) AS max_value,
+    MIN(value) AS min_value
+FROM 
+    Sensor_Data
+WHERE 
+    date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sensor_id, DATE(date);
+
+
+-- Query for weekly sensor data for each sensor within a specified time period
+SELECT 
+    sensor_id, 
+    YEAR(date) AS year, 
+    WEEK(date) AS week, 
+    AVG(value) AS average_value,
+    MAX(value) AS max_value,
+    MIN(value) AS min_value
+FROM 
+    Sensor_Data
+WHERE 
+    date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sensor_id, YEAR(date), WEEK(date);
+
+
+-- Query for monthly sensor data for each sensor within a specified time period
+SELECT 
+    sensor_id, 
+    YEAR(date) AS year, 
+    MONTH(date) AS month, 
+    AVG(value) AS average_value,
+    MAX(value) AS max_value,
+    MIN(value) AS min_value
+FROM 
+    Sensor_Data
+WHERE 
+    date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sensor_id, YEAR(date), MONTH(date);
+
+
+-- Query for quarterly sensor data for each sensor within a specified time period
+SELECT 
+    sensor_id, 
+    YEAR(date) AS year, 
+    QUARTER(date) AS quarter, 
+    AVG(value) AS average_value,
+    MAX(value) AS max_value,
+    MIN(value) AS min_value
+FROM 
+    Sensor_Data
+WHERE 
+    date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sensor_id, YEAR(date), QUARTER(date);
+
+
+-- Query for annual sensor data for each sensor within a specified time period
+SELECT 
+    sensor_id, 
+    YEAR(date) AS year, 
+    AVG(value) AS average_value,
+    MAX(value) AS max_value,
+    MIN(value) AS min_value
+FROM 
+    Sensor_Data
+WHERE 
+    date BETWEEN 'Start_Date' AND 'End_Date'
+GROUP BY 
+    sensor_id, YEAR(date);

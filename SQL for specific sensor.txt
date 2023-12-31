@@ -1,0 +1,14 @@
+-- Query to calculate average, maximum, and minimum values for a specific sensor type within a specified date range
+SELECT 
+    AVG(CASE WHEN st.typename = 'Temperature' THEN sd.value ELSE NULL END) AS avg_temperature,
+    MAX(CASE WHEN st.typename = 'Temperature' THEN sd.value ELSE NULL END) AS max_temperature,
+    MIN(CASE WHEN st.typename = 'Temperature' THEN sd.value ELSE NULL END) AS min_temperature
+FROM 
+    Sensor_Data sd
+INNER JOIN 
+    Sensors s ON sd.sensor_id = s.sensor_id
+INNER JOIN 
+    Sensor_Type st ON s.sensor_typeid = st.sensor_typeid
+WHERE 
+    sd.sensor_typeid = 'Your_Sensor_Type_ID' -- Replace 'Your_Sensor_Type_ID' with the actual sensor type identifier
+    AND sd.date BETWEEN 'Start_Date' AND 'End_Date' -- Replace 'Start_Date' and 'End_Date' with the desired date range
