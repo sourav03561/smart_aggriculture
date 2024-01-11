@@ -33,7 +33,26 @@
 				      <img class="selected-image" src="../img/land_1.png" alt="Selected Image">
 				    </div>
 				    <div class="value-display">
-				      <p class="selected-value">Selected Value: 0</p>
+						<div class="value-div">
+							<p class="value-custom">P:</p>
+							<p class="selected-value">111</p>
+						</div>
+						<div class="value-div">
+							<p class="value-custom">N:</p>
+							<p class="selected-value">111</p>
+						</div>
+						<div class="value-div">
+							<p class="value-custom">K:</p>
+							<p class="selected-value">111</p>
+						</div>
+						<div class="value-div">
+							<p class="value-custom">Ph:</p>
+							<p class="selected-value">111</p>
+						</div>
+						<div class="value-div">
+							<p class="value-custom">moisture:</p>
+							<p class="selected-value">111</p>
+						</div>
 				    </div>
 				  </div>
 				  <div class="land-selector">
@@ -45,7 +64,26 @@
 				      <img class="selected-image" src="../img/land_2.png" alt="Selected Image">
 				    </div>
 				    <div class="value-display">
-				      <p class="selected-value">Selected Value: 0</p>
+				    <div class="value-div">
+				    	<p class="value-custom">P:</p>
+				    	<p class="selected-value">222</p>
+				    </div>
+				    <div class="value-div">
+				    	<p class="value-custom">N:</p>
+				    	<p class="selected-value">222</p>
+				    </div>
+				    <div class="value-div">
+				    	<p class="value-custom">K:</p>
+				    	<p class="selected-value">222</p>
+				    </div>
+				    <div class="value-div">
+				    	<p class="value-custom">Ph:</p>
+				    	<p class="selected-value">222</p>
+				    </div>
+				    <div class="value-div">
+				    	<p class="value-custom">moisture:</p>
+				    	<p class="selected-value">222</p>
+				    </div>
 				    </div>
 				  </div>
 				</div>
@@ -55,23 +93,51 @@
 			</footer>
 		</div>
 		<script>
-			document.querySelectorAll('.dropdown').forEach(function(dropdown) {
-			  const selectedImage = dropdown.parentElement.querySelector('.selected-image');
-			  const selectedValue = dropdown.parentElement.querySelector('.selected-value');
-			  const valueDisplay = dropdown.parentElement.querySelector('.value-display');
+			// document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+			//   const selectedImage = dropdown.parentElement.querySelector('.selected-image');
+			//   const selectedValue = dropdown.parentElement.querySelector('.selected-value');
+			//   const valueDisplay = dropdown.parentElement.querySelector('.value-display');
 			  
-			  dropdown.addEventListener('change', function() {
-			    const selectedOption = dropdown.value;
-			    if (selectedOption === 'option1') {
-			      selectedImage.src = '../img/land_1.png';
-			      selectedValue.textContent = 'Selected Value: 111';
-			    } else if (selectedOption === 'option2') {
-			      selectedImage.src = '../img/land_2.png';
-			      selectedValue.textContent = 'Selected Value: 222';
-			    }
-			    valueDisplay.style.display = 'block';
-			  });
-			});
+			//   dropdown.addEventListener('change', function() {
+			//     const selectedOption = dropdown.value;
+			//     if (selectedOption === 'option1') {
+			//       selectedImage.src = '../img/land_1.png';
+			//       selectedValue.textContent = '111';
+			//     } else if (selectedOption === 'option2') {
+			//       selectedImage.src = '../img/land_2.png';
+			//       selectedValue.textContent = '222';
+			//     }
+			//     valueDisplay.style.display = 'block';
+			//   });
+			// });
+
+document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+  const selectedImage = dropdown.parentElement.querySelector('.selected-image');
+  const selectedValues = dropdown.parentElement.querySelectorAll('.selected-value');
+
+  dropdown.addEventListener('change', function() {
+    const selectedOption = dropdown.value;
+    const options = dropdown.querySelectorAll('option');
+    options.forEach(function(option, index) {
+      if (option.value === selectedOption) {
+        if (index === 0) {
+          selectedImage.src = '../img/land_1.png';
+        } else if (index === 1) {
+          selectedImage.src = '../img/land_2.png';
+        }
+
+        selectedValues.forEach(function(value) {
+          if (index === 0) {
+            value.textContent = '111';
+          } else if (index === 1) {
+            value.textContent = '222';
+          }
+        });
+      }
+    });
+    valueDisplay.style.display = 'block';
+  });
+});
 
 
 		</script>
