@@ -1,1 +1,1 @@
-# smart_aggriculture
+# smart aggriculture
