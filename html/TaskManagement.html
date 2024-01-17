@@ -34,6 +34,8 @@
 		}
 		h1{
 			text-align: center;
+			color: rgb(22,167,30);
+			font-weight: 900;
 		}
 		table {
 		    width: 100%;
@@ -68,12 +70,32 @@
 		button:hover {
 		    background-color: #45a049;
 		}
+		.custom-button{
+			width: 350px;
+			display: block;
+			margin: 30px auto 0;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 50px;
+			background-color:  #4caf50;
+			color: white;
+			height: 40px;
+			font-size: 15px;
+			font-weight: 600;
+			font-family: Arial, Helvetica, sans-serif;
+			
+		}
+		.custom-button:hover{
+			background-color: #45a049;
+			color: rgb(203, 240, 187);
+		}
 
 	</style>
 </head>
 <body>
     <div class="task-list">
         <h1>Task List</h1>
+		<button class="custom-button" onclick="location.href='Add_EditTask.html'">Add Task</button>
         <table>
             <thead>
                 <tr>
@@ -111,7 +133,7 @@
 				        </tr>
 			</tbody>
         </table>
-        <button onclick="location.href='Add_EditTask.html'">Add Task</button>
+        
     </div>
 
     <script src="script.js"></script>
