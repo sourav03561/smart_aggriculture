@@ -17,7 +17,8 @@
 		        }
 		        
 		        h1 {
-		            color: #333;
+		            color: rgb(22,167,30);
+					font-weight: 900;
 		        }
 		        
 		        button {
@@ -59,13 +60,31 @@
 		            margin-right: 5px;
 					margin: 10px;
 		        }
-
+				.custom-button{
+					width: 350px;
+					display: block;
+					margin: 30px auto 0;
+					padding: 10px 20px;
+					border: none;
+					border-radius: 50px;
+					background-color:  #4caf50;
+					color: white;
+					height: 40px;
+					font-size: 15px;
+					font-weight: 600;
+					font-family: Arial, Helvetica, sans-serif;
+					
+				}
+				.custom-button:hover{
+					background-color: #45a049;
+					color: rgb(203, 240, 187);
+				}
 		    </style>
 	</head>
 	<body>
 		
 		<h1>Land Management</h1>
-		<button onclick="location.href='detectland.html'">Detect Land</button>
+		<button class="custom-button" onclick="location.href='detectland.html'">Detect Land</button>
 		
 		<table>
 		    <thead>
