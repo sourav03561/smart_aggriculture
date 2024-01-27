@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta charset="utf-8"/>
+    <meta charset="utf-8"/>
     <title>Login</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
@@ -18,7 +17,7 @@
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($con, $password);
         // Check user is exist in the database
-        $query    = "SELECT * FROM `users` WHERE username='$username'
+        $query    = "SELECT * FROM `users` WHERE User_name='$username'
                      AND password='" . md5($password) . "'";
         $result = mysqli_query($con, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
@@ -34,13 +33,24 @@
         }
     } else {
 ?>
-    <form class="form" method="post" name="login">
-        <h1 class="login-title">Login</h1>
-        <input type="text" class="login-input" name="username" placeholder="Username" autofocus="true"/>
-        <input type="password" class="login-input" name="password" placeholder="Password"/>
-        <input type="submit" value="Login" name="submit" class="login-button"/>
-        <p class="link"><a href="registration.php">New Registration</a></p>
-  </form>
+    <div class="leftBox form-container">
+				<form class="form" method="post" name="login">
+				      <h1 class="title">SMART</h1>
+					  <h1 class="title">AGRICULTURE</h1>
+					  <p class="link">Welcome to our APP<a href="registration.php" class="custom-link">Register</a></p>
+				      <p class="content">Name</p>
+					  <input type="text" class="login-input custom-input" name="username" placeholder="Username" autofocus="true"/>
+				      <p class="content">Password</p>
+					  <input type="password" class="login-input custom-input" name="password" placeholder="Password"/>
+				      <input type="submit" value="Login" name="submit" class="login-button custom-button"/>
+				      
+				</form>
+			</div>
+			<!-- rightBox -->
+			<div class="rightBox img-container shadow">
+				<img src="TechThinkeres.png"/>
+			</div>
+	</div>
 <?php
     }
 ?>
